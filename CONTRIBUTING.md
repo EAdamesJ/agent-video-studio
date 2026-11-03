@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for helping make Agent Video Studio useful to creators and the agents they already use.
+Thanks for helping make Agent Video Studio useful to creators and the agents they already use. Participation follows the [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## Before starting
 
@@ -26,3 +26,4 @@ Thanks for helping make Agent Video Studio useful to creators and the agents the
 ## Reporting a security issue
 
 Please do not open a public issue containing credentials, personal media, or a suspected exploitable vulnerability. Use GitHub's private vulnerability reporting for this repository when enabled.
+\n

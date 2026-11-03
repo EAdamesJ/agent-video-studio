@@ -25,7 +25,7 @@ See [`CAPABILITY_MAP.md`](CAPABILITY_MAP.md). Its seven modules define the appro
 - Browser UI served by FastAPI from static HTML, CSS, and JavaScript; no separate frontend build is required for self-hosting.
 - Local filesystem storage with a configurable data root; SQLite stores projects, assets, providers, and job state.
 - Model adapters: Anthropic Messages and OpenAI-compatible chat APIs (including DeepSeek's documented compatible endpoint); generic custom base URLs.
-- Optional media adapters: local Whisper-compatible transcription, Edge/OpenAI/ElevenLabs TTS, Pexels/Pixabay stock media, and generated-image/video providers through explicit adapters.
+- Optional media adapters: local Whisper-compatible transcription, Edge and ElevenLabs TTS, Pexels/Pixabay stock media, and generated-image/video providers through explicit adapters.
 
 Dependencies use bounded compatible ranges in `pyproject.toml`; external services stay optional and are configured by environment variables or the local settings UI.
 
@@ -64,7 +64,7 @@ src/agent_video_studio/       Application package
   media/                      Ingest, timeline, FFmpeg render, captions, export
   mcp/                        MCP tools and host examples
   core/                       Projects, persistence, config, jobs, storage
-web/                          Browser application assets
+src/agent_video_studio/web/   Browser application assets served by FastAPI
 specs/                        Product and capability specifications
 tasks/                        Implementation plan and task state
 docs/                         Installation, providers, agents, publishing, security
@@ -118,3 +118,4 @@ The repository's planned test layout is `tests/`: unit tests for project/timelin
 
 - The repository owner has not supplied product branding, so `agent-video-studio` is the working product/repository name.
 - OAuth client registrations and review approvals for social networks must be supplied by operators; code cannot grant platform permissions.
+\n

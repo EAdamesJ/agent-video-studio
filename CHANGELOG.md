@@ -6,6 +6,12 @@ All notable user-facing changes will be documented here. The release number foll
 
 ### Added
 
-- Approved full 0.1.0 scope for prompt-to-video creation and long-form video repurposing.
-- Shared project architecture for web, CLI, REST, and MCP surfaces.
-- Provider-neutral design and confirmation-gated publishing requirements.
+- Local project, asset, and job storage with a shared application service.
+- Prompt-to-script/storyboard and long-form transcription/highlight workflows.
+- FFmpeg render/export pipeline with aspect ratios, captions, narration, and music.
+- Web, CLI, REST, and MCP interfaces, including Streamable HTTP transport.
+- Provider adapters for text, transcription, speech, stock footage, and publishing services.
+- Preflight and explicit confirmation for social publishing; English and Spanish guides.
+
+This work is unreleased. The complete 0.1.0 release checklist remains in `tasks/todo.md`.
+\n

@@ -7,8 +7,8 @@ Render editable timelines into video deliverables with narration, captions, musi
 ## Commands
 
 ```powershell
-agent-video-studio project render <project-id> --format 9:16
-agent-video-studio project export <project-id> --output <directory>
+agent-video-studio project render <project-id> --aspect-ratios 9:16,16:9
+agent-video-studio project export <project-id> <render-id> 9:16 <directory>
 ```
 
 ## Project structure
@@ -34,3 +34,4 @@ Plan tiny generated-media fixtures for aspect ratios, subtitle inclusion, audio 
 - Timeline projects render MP4 H.264/AAC in vertical 9:16, landscape 16:9, and square 1:1 layouts.
 - Captions can be burned in and exported as SRT/VTT; audio can be normalized and mixed.
 - Each export includes project metadata, thumbnail, title/description/hashtags, and source attribution/license notes where available.
+\n

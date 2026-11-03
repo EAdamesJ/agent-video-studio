@@ -7,8 +7,8 @@ Prepare complete distribution packages and provide authorized upload adapters fo
 ## Commands
 
 ```powershell
-agent-video-studio project export <project-id> --platform youtube
-agent-video-studio project publish <project-id> --platform youtube --confirm
+agent-video-studio project preflight-publish <project-id> <render-id> 9:16
+agent-video-studio project publish <project-id> <render-id> 9:16 --platform youtube --title "Launch" --confirm
 ```
 
 ## Project structure
@@ -34,3 +34,4 @@ Plan mocked OAuth/upload tests and metadata validation. Live publication is manu
 - Export produces a platform-ready folder even when OAuth is not configured.
 - YouTube, Instagram, and TikTok adapters report setup/audit requirements and support the platform's permitted upload flow when configured.
 - Post metadata and user-selected visibility are validated before upload; failures do not lose the rendered project.
+\n

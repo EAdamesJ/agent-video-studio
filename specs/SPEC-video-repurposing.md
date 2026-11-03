@@ -9,7 +9,8 @@ Convert operator-supplied long-form video/audio into a transcript and a ranked s
 ```powershell
 agent-video-studio project create --title "Episode clips" --mode repurpose
 agent-video-studio project import <project-id> --file <path>
-agent-video-studio project highlights <project-id>
+agent-video-studio project analyze <project-id>
+agent-video-studio project select-highlights <project-id> <comma-separated-ids>
 ```
 
 ## Project structure
@@ -35,3 +36,4 @@ Plan fixture-based checks for timestamps, clip bounds, transcript segments, supp
 - Local video and audio import produces duration/metadata and a normalized transcript.
 - Candidate clips include start/end timestamps, title, hook, transcript excerpt, and ranking rationale.
 - Approved candidates become editable timeline projects and render at selected aspect ratios.
+\n

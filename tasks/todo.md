@@ -89,8 +89,8 @@ Tasks are ordered by the approved module dependency graph. Each code task is sco
   - Acceptance: prompt-to-video and repurposing paths are operable from the browser.
   - Verify: browser walkthrough from project start through export download.
   - Dependencies: Task 14.
-  - Files: `web/index.html`, `web/app.js`, `web/styles.css`, `src/agent_video_studio/api/static.py`.
-- [ ] Task 16: CLI project parity and diagnostics.
+  - Files: `src/agent_video_studio/web/index.html`, `src/agent_video_studio/web/app.js`, `src/agent_video_studio/web/styles.css`, `src/agent_video_studio/api/app.py`.
+- [ ] Task 16: CLI project parity, export/publishing commands, and diagnostics.
   - Acceptance: key project, provider, render, and export operations are scriptable.
   - Verify: run documented command help and a local project flow.
   - Dependencies: Tasks 3–14.
@@ -107,7 +107,7 @@ Tasks are ordered by the approved module dependency graph. Each code task is sco
   - Acceptance: every upload displays destination, account, media, caption, and visibility before confirmation.
   - Verify: mock preflight and confirmation-gated state transition.
   - Dependencies: Tasks 3 and 12.
-  - Files: `src/agent_video_studio/publishing/base.py`, `src/agent_video_studio/publishing/models.py`, `src/agent_video_studio/publishing/service.py`.
+  - Files: `src/agent_video_studio/publishing/base.py`, `src/agent_video_studio/publishing/models.py`, `src/agent_video_studio/publishing/service.py`, `src/agent_video_studio/web/app.js`.
 - [ ] Task 19: YouTube upload adapter.
   - Acceptance: configured OAuth client can upload with explicit privacy and metadata options.
   - Verify: mocked upload and documented private/test-account path.
@@ -133,3 +133,4 @@ Tasks are ordered by the approved module dependency graph. Each code task is sco
 
 - [ ] All module specs' success criteria are satisfied.
 - [ ] No release tag is created until the feature-complete checklist is met.
+\n

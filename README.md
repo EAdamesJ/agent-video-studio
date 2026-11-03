@@ -8,6 +8,8 @@ Create short videos from an idea, or turn long-form media into timestamped clips
 
 [English](#english) · [Español](#español) · [Roadmap](tasks/plan.md) · [Contributing](CONTRIBUTING.md)
 
+[Guías: instalación](docs/es/INSTALLATION.md) · [proveedores](docs/es/PROVIDERS.md) · [MCP](docs/es/MCP.md) · [publicación](docs/es/PUBLISHING.md) · [privacidad](docs/es/PRIVACY.md)
+
 </div>
 
 > **Status:** Version 0.1.0 is in active development. The full intended release scope is documented in [`SPEC.md`](SPEC.md). No release tag has been published.
@@ -69,3 +71,4 @@ MIT. See [`LICENSE`](LICENSE).
 ## Español: contribuciones
 
 Se aceptan reportes de errores, ideas y contribuciones. Antes de abrir un PR, revisa [`CONTRIBUTING.md`](CONTRIBUTING.md) y el contrato de cada módulo en [`specs/`](specs/).
+\n

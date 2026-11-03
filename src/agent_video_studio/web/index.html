@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0c0f14" />
+    <meta name="description" content="Create AI videos and repurpose long-form media with Claude, Codex, DeepSeek, and MCP." />
+    <title>Agent Video Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/static/styles.css" />
+    <link rel="stylesheet" href="/static/publishing.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="/" aria-label="Agent Video Studio home">
+          <span class="brand-mark"><span></span><span></span><span></span></span>
+          <span><strong>frame<span class="brand-accent">forge</span></strong><small>AGENT VIDEO STUDIO</small></span>
+        </a>
+        <button class="new-project" id="new-project"><span class="plus">＋</span><span data-i18n="newProject">Nuevo proyecto</span><kbd>⌘ K</kbd></button>
+        <div class="sidebar-section"><span data-i18n="workspace">ESPACIO DE TRABAJO</span><span class="section-count" id="project-count">0</span></div>
+        <nav class="project-list" id="project-list" aria-label="Projects"></nav>
+        <div class="sidebar-spacer"></div>
+        <div class="agent-card">
+          <div class="agent-orbit"><span>✳</span></div>
+          <div><strong data-i18n="agentReady">Listo para agentes</strong><p data-i18n="agentHint">Conecta Claude, Codex o tu modelo.</p></div>
+          <button class="icon-button tiny" id="open-integrations" title="Integrations">↗</button>
+        </div>
+        <div class="sidebar-footer">
+          <span class="online-dot"></span><span data-i18n="localWorkspace">Espacio local</span>
+          <button class="language-toggle" id="language-toggle" aria-label="Change language">ES</button>
+        </div>
+      </aside>
+
+      <main class="main-panel">
+        <header class="topbar">
+          <div class="breadcrumb"><span>Studio</span><span class="crumb-slash">/</span><span id="breadcrumb-project" data-i18n="overview">Overview</span></div>
+          <div class="topbar-actions">
+            <button class="quiet-button" id="open-integrations-top"><span class="sparkle">✳</span><span data-i18n="integrations">Integraciones</span></button>
+            <div class="avatar" title="Local workspace">EA</div>
+          </div>
+        </header>
+
+        <section class="content" id="content">
+          <div class="welcome-view" id="welcome-view">
+            <div class="welcome-copy">
+              <div class="eyebrow"><span class="eyebrow-dot"></span><span data-i18n="studioLabel">AI VIDEO WORKSPACE</span></div>
+              <h1 data-i18n="welcomeTitle">De una idea.<br /><em>A un video que se mueve.</em></h1>
+              <p class="welcome-description" data-i18n="welcomeDescription">Crea desde cero o transforma tus videos largos en clips listos para compartir. Tú eliges los agentes, nosotros conectamos el flujo completo.</p>
+            </div>
+
+            <div class="mode-cards">
+              <button class="mode-card active" data-mode="prompt" id="mode-prompt">
+                <div class="mode-icon icon-create">✳</div>
+                <div class="mode-card-copy"><span class="mode-kicker" data-i18n="modeOne">01 · CREAR</span><strong data-i18n="ideaToVideo">Idea a video</strong><span data-i18n="ideaHint">Guion, voz, escenas y formatos.</span></div><span class="mode-arrow">↗</span>
+              </button>
+              <button class="mode-card" data-mode="repurpose" id="mode-repurpose">
+                <div class="mode-icon icon-repurpose">▧</div>
+                <div class="mode-card-copy"><span class="mode-kicker" data-i18n="modeTwo">02 · REUTILIZAR</span><strong data-i18n="longToClips">Video largo a clips</strong><span data-i18n="longHint">Transcripción, cortes y subtítulos.</span></div><span class="mode-arrow">↗</span>
+              </button>
+            </div>
+
+            <form class="create-panel" id="create-form">
+              <div class="create-panel-head"><div><span class="panel-overline" data-i18n="startProject">EMPIEZA UN PROYECTO</span><h2 id="form-title" data-i18n="tellUs">Cuéntanos qué quieres crear</h2></div><span class="step-indicator"><b>01</b> / 03</span></div>
+              <label class="input-label" for="project-title" data-i18n="projectName">Nombre del proyecto</label>
+              <input id="project-title" class="text-input" maxlength="180" placeholder="Ej. Lanzamiento de producto" required />
+              <label class="input-label" for="project-brief" data-i18n="creativeBrief">Brief creativo</label>
+              <textarea id="project-brief" class="text-input brief-input" maxlength="12000" placeholder="Describe el tema, la audiencia, el tono y lo que quieres que recuerden..." rows="4"></textarea>
+              <div class="form-bottom">
+                <div class="form-options">
+                  <label class="select-wrap"><span class="option-icon">文</span><select id="language-select" aria-label="Language"><option value="es">Español</option><option value="en">English</option><option value="pt">Português</option><option value="fr">Français</option></select><span class="chevron">⌄</span></label>
+                  <label class="select-wrap"><span class="option-icon">▣</span><select id="aspect-select" aria-label="Aspect ratio"><option value="9:16">Vertical · 9:16</option><option value="16:9">Landscape · 16:9</option><option value="1:1">Square · 1:1</option></select><span class="chevron">⌄</span></label>
+                </div>
+                <button class="primary-button" type="submit"><span data-i18n="createProject">Crear proyecto</span><span>↗</span></button>
+              </div>
+              <div class="upload-inline" id="upload-inline" hidden><label for="source-file" class="upload-label"><span>＋</span><span data-i18n="addSource">Añadir video o audio</span><small>MP4, MOV, MKV, MP3, WAV</small></label><input type="file" id="source-file" accept="video/*,audio/*" hidden /></div>
+            </form>
+
+            <div class="trust-row"><span><i>⌂</i><span data-i18n="localFirst">Local-first</span></span><span><i>⌘</i><span>MCP · REST · CLI</span></span><span><i>↗</i><span data-i18n="providerAgnostic">Modelos a tu elección</span></span></div>
+          </div>
+
+          <section class="project-view" id="project-view" hidden>
+            <div class="project-heading">
+              <div><div class="eyebrow"><span class="eyebrow-dot"></span><span id="project-mode-label">IDEA A VIDEO</span></div><h1 id="project-heading-title">Untitled project</h1><p id="project-heading-subtitle"></p></div>
+              <div class="project-heading-actions"><span class="status-pill" id="project-status">Draft</span><button class="primary-button compact" id="render-button"><span data-i18n="renderVideo">Render video</span><span>▶</span></button></div>
+            </div>
+
+            <div class="workflow-steps" id="workflow-steps"><div class="workflow-step active"><span>1</span><b data-i18n="stepCreate">Brief</b></div><span class="step-line"></span><div class="workflow-step"><span>2</span><b data-i18n="stepBuild">Construir</b></div><span class="step-line"></span><div class="workflow-step"><span>3</span><b data-i18n="stepExport">Exportar</b></div></div>
+
+            <div class="project-grid">
+              <div class="project-main-column">
+                <div class="workspace-card source-card">
+                  <div class="card-heading"><div><div class="card-icon">▧</div><div><h2 data-i18n="sourceMedia">Material fuente</h2><p data-i18n="sourceMediaHint">Añade el video o audio que quieres transformar.</p></div></div><span class="optional-tag" data-i18n="optional">OPCIONAL</span></div>
+                  <div class="dropzone" id="dropzone"><div class="upload-symbol">↑</div><div><strong data-i18n="dropFile">Arrastra un archivo aquí</strong><span><span data-i18n="orBrowse">o</span> <button type="button" id="browse-file" data-i18n="browseFiles">explora tu equipo</button></span></div><small>MP4 · MOV · MKV · MP3 · WAV · hasta 2 GB</small><input type="file" id="project-file" accept="video/*,audio/*" hidden /></div>
+                  <div class="asset-list" id="asset-list"></div>
+                  <div class="upload-progress" id="upload-progress" hidden><span></span><b data-i18n="uploading">Subiendo...</b></div>
+                </div>
+
+                <div class="workspace-card script-card">
+                  <div class="card-heading"><div><div class="card-icon script-icon">✎</div><div><h2 data-i18n="scriptStoryboard">Guion y storyboard</h2><p data-i18n="scriptHint">Genera escenas editables con el modelo elegido.</p></div></div><button class="outline-button" id="generate-script"><span>✳</span><span data-i18n="generateScript">Generar guion</span></button></div>
+                  <div class="brief-summary" id="brief-summary"></div>
+                  <div class="scene-list" id="scene-list"><div class="empty-state"><span>✳</span><p data-i18n="emptyScenes">Las escenas aparecerán aquí cuando generes el guion o analices el material.</p></div></div>
+                </div>
+
+                <div class="workspace-card highlights-card" id="highlights-card" hidden>
+                  <div class="card-heading"><div><div class="card-icon highlight-icon">✂</div><div><h2 data-i18n="clipCandidates">Momentos destacados</h2><p data-i18n="clipHint">Selecciona los cortes que quieras llevar al timeline.</p></div></div><button class="outline-button" id="analyze-media"><span>✳</span><span data-i18n="analyzeSource">Analizar fuente</span></button></div>
+                  <div class="highlight-list" id="highlight-list"></div>
+                  <div class="highlight-footer" id="highlight-footer" hidden><span id="selected-count">0 seleccionados</span><button class="primary-button compact" id="use-highlights"><span data-i18n="useClips">Usar clips</span><span>↗</span></button></div>
+                </div>
+
+                <div class="workspace-card exports-card" id="exports-card" hidden>
+                  <div class="card-heading"><div><div class="card-icon export-icon">↗</div><div><h2 data-i18n="renderedExports">Videos exportados</h2><p data-i18n="exportHint">Descarga videos, subtítulos y archivos del proyecto.</p></div></div></div>
+                  <div class="export-list" id="export-list"></div>
+                </div>
+              </div>
+
+              <aside class="project-side-column">
+                <div class="workspace-card settings-card">
+                  <div class="side-card-title"><span class="settings-glyph">⚙</span><h2 data-i18n="projectSettings">Ajustes del proyecto</h2></div>
+                  <label class="input-label" for="project-language" data-i18n="outputLanguage">Idioma de salida</label><select class="select-input" id="project-language"><option value="es">Español</option><option value="en">English</option><option value="pt">Português</option><option value="fr">Français</option></select>
+                  <label class="input-label" data-i18n="outputFormats">Formatos de salida</label><div class="format-options"><label><input type="checkbox" name="format" value="9:16" checked /><span>9:16 <small>Reels / Shorts</small></span></label><label><input type="checkbox" name="format" value="16:9" /><span>16:9 <small>YouTube</small></span></label><label><input type="checkbox" name="format" value="1:1" /><span>1:1 <small>Square</small></span></label></div>
+                  <label class="toggle-row"><span><b data-i18n="burnCaptions">Quemar subtítulos</b><small data-i18n="burnCaptionsHint">También exporta SRT y VTT.</small></span><input type="checkbox" id="captions-toggle" checked /><i></i></label>
+                  <label class="toggle-row"><span><b data-i18n="voiceover">Voz en off</b><small data-i18n="voiceoverHint">Genera narración para cada escena.</small></span><input type="checkbox" id="tts-toggle" checked /><i></i></label>
+                </div>
+                <div class="workspace-card provider-card">
+                  <div class="side-card-title"><span class="provider-glyph">✳</span><h2 data-i18n="modelProvider">Proveedor de modelo</h2><button class="text-link" id="refresh-providers" data-i18n="refresh">Actualizar</button></div>
+                  <div class="provider-current" id="provider-current"><span class="provider-dot"></span><span data-i18n="checking">Comprobando configuración...</span></div>
+                  <p class="provider-note" data-i18n="providerSetupNote">Las claves se configuran localmente en el archivo .env. Nunca se muestran en la interfaz.</p>
+                  <a class="docs-link" href="https://github.com/EAdamesJ/agent-video-studio/blob/main/docs/PROVIDERS.md" target="_blank" rel="noreferrer"><span data-i18n="configureProviders">Configurar proveedores</span><span>↗</span></a>
+                </div>
+                <div class="workspace-card agent-tools-card">
+                  <div class="agent-tools-heading"><span>⌘</span><div><h2 data-i18n="agentTools">Herramientas para agentes</h2><p data-i18n="agentToolsHint">Mismo proyecto. Distintas interfaces.</p></div></div>
+                  <div class="agent-tool-row"><span class="agent-logo claude">✳</span><span>Claude</span><b>MCP</b></div>
+                  <div class="agent-tool-row"><span class="agent-logo codex">◈</span><span>Codex</span><b>MCP</b></div>
+                  <div class="agent-tool-row"><span class="agent-logo deepseek">◉</span><span>DeepSeek</span><b>API</b></div>
+                  <a class="docs-link" href="https://github.com/EAdamesJ/agent-video-studio/blob/main/docs/MCP.md" target="_blank" rel="noreferrer"><span data-i18n="connectAgent">Conectar un agente</span><span>↗</span></a>
+                </div>
+                <div class="workspace-card publish-card">
+                  <div class="publish-header"><div class="publish-icon">↗</div><div><h2 data-i18n="distribution">Distribución</h2><p data-i18n="distributionHint">Exporta ahora. Conecta redes cuando quieras.</p></div></div>
+                  <div class="platform-row"><span class="platform youtube">▶</span>YouTube<span class="platform-state" data-i18n="exportReady">Export listo</span></div>
+                  <div class="platform-row"><span class="platform instagram">◎</span>Instagram<span class="platform-state" data-i18n="setupNeeded">Configurar</span></div>
+                  <div class="platform-row"><span class="platform tiktok">♪</span>TikTok<span class="platform-state" data-i18n="setupNeeded">Configurar</span></div>
+                  <p class="approval-note"><span>ⓘ</span><span data-i18n="publishApproval">Publicar requiere autorización y confirmación explícita.</span></p>
+                </div>
+              </aside>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <div class="modal-backdrop" id="integrations-modal" hidden>
+      <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <button class="modal-close" id="close-integrations" aria-label="Close">×</button>
+        <div class="eyebrow"><span class="eyebrow-dot"></span><span data-i18n="connectorsLabel">CONECTORES</span></div>
+        <h2 id="modal-title" data-i18n="connectTitle">Tu stack creativo, conectado.</h2>
+        <p data-i18n="connectDescription">Configura las claves en tu .env local y elige qué proveedores pueden procesar cada proyecto.</p>
+        <div class="integration-grid"><div><span class="agent-logo claude">✳</span><b>Claude</b><small>Anthropic API · MCP</small></div><div><span class="agent-logo codex">◈</span><b>Codex</b><small>OpenAI · MCP</small></div><div><span class="agent-logo deepseek">◉</span><b>DeepSeek</b><small>Compatible API</small></div><div><span class="agent-logo local">⌂</span><b>Local</b><small>Whisper · FFmpeg</small></div></div>
+        <a class="modal-link" href="https://github.com/EAdamesJ/agent-video-studio/blob/main/docs/PROVIDERS.md" target="_blank" rel="noreferrer"><span data-i18n="readSetup">Ver guía de configuración</span><span>↗</span></a>
+      </section>
+    </div>
+    <div class="modal-backdrop" id="publish-modal" hidden>
+      <section class="modal publish-modal" role="dialog" aria-modal="true" aria-labelledby="publish-title">
+        <button class="modal-close" id="close-publish" aria-label="Close">×</button>
+        <div class="eyebrow"><span class="eyebrow-dot"></span><span data-i18n="publishLabel">PUBLICACIÓN</span></div>
+        <h2 id="publish-title" data-i18n="publishTitle">Revisa el post antes de enviarlo.</h2>
+        <p data-i18n="publishSubtitle">El video se enviará a la cuenta conectada de la plataforma.</p>
+        <input type="hidden" id="publish-render-id" /><input type="hidden" id="publish-aspect" />
+        <label class="input-label" for="publish-platform" data-i18n="destination">Destino</label>
+        <select class="select-input" id="publish-platform"><option value="youtube">YouTube</option><option value="instagram">Instagram Reels</option><option value="tiktok">TikTok</option></select>
+        <label class="input-label" for="publish-post-title" data-i18n="postTitle">Título</label>
+        <input class="text-input" id="publish-post-title" maxlength="500" />
+        <label class="input-label" for="publish-description" data-i18n="postCaption">Descripción / caption</label>
+        <textarea class="text-input" id="publish-description" rows="3" maxlength="5000"></textarea>
+        <label class="input-label" for="publish-privacy" data-i18n="visibility">Visibilidad</label>
+        <select class="select-input" id="publish-privacy"><option value="private">Private</option><option value="unlisted">Unlisted</option><option value="public">Public</option></select>
+        <label class="publish-option" id="share-feed-option"><input type="checkbox" id="share-to-feed" checked /><span data-i18n="shareToFeed">Compartir también en el feed</span></label>
+        <label class="publish-option" id="ai-label-option"><input type="checkbox" id="ai-generated-label" checked /><span data-i18n="aiLabel">Marcar como contenido generado con IA</span></label>
+        <div class="preflight-box" id="publish-preflight" role="status"></div>
+        <label class="publish-confirm"><input type="checkbox" id="publish-confirm-checkbox" /><span data-i18n="confirmPublish">Confirmo el destino, el video, el texto y la visibilidad. Publicar enviará el contenido a la plataforma.</span></label>
+        <button class="primary-button" id="confirm-publish" disabled><span data-i18n="publishNow">Publicar ahora</span><span>↗</span></button>
+      </section>
+    </div>
+    <script type="module" src="/static/app.js"></script>
+  </body>
+</html>
+\n

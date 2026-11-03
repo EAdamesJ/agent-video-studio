@@ -8,13 +8,14 @@ Expose the same project and rendering workflows through a browser workspace, CLI
 
 ```powershell
 agent-video-studio serve --host 127.0.0.1 --port 8787
-agent-video-studio mcp
+agent-video-studio mcp --transport stdio
+agent-video-studio mcp --transport streamable-http --host 127.0.0.1 --port 8788
 agent-video-studio providers
 ```
 
 ## Project structure
 
-`src/agent_video_studio/api/` contains REST routes and request schemas; `src/agent_video_studio/cli.py` the CLI; `src/agent_video_studio/mcp/` the MCP server; `web/` the browser application.
+`src/agent_video_studio/api/` contains REST routes and request schemas; `src/agent_video_studio/cli.py` the CLI; `src/agent_video_studio/mcp/` the MCP server; `src/agent_video_studio/web/` the browser application.
 
 ## Code style
 
@@ -33,5 +34,6 @@ Plan API schema and MCP tool contract checks, CLI command checks, and a browser 
 ## Success criteria
 
 - Web, CLI, REST, and MCP can list/create/edit projects, generate scripts, import media, select highlights, render, and export.
-- MCP works over stdio and can be configured for Streamable HTTP.
+- MCP works over stdio and Streamable HTTP.
 - Claude Code/Claude Desktop and Codex setup examples are provided; DeepSeek is configured as a model provider rather than incorrectly assumed to be an MCP host.
+\n
