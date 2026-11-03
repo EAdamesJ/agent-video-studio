@@ -99,5 +99,3 @@ def _caption(title: str, description: str) -> str:
     if len(text) > 2200:
         raise ValueError("Instagram Reel title and caption must fit within 2,200 characters.")
     return text
-
-\n

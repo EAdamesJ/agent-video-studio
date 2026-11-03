@@ -63,5 +63,3 @@ class OpenAICompatibleProvider:
         if not isinstance(content, str) or not content.strip():
             raise ProviderError(f"{self.id} returned an empty response.")
         return content.strip()
-
-\n

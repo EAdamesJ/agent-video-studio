@@ -21,5 +21,3 @@ Publishing calls send video/metadata to a social network and require a separate 
 Keep `AVS_HOST=127.0.0.1` for local use. If remote access is needed, put the server behind a TLS endpoint with authentication and network access controls. Do not expose raw local API routes to the public internet.
 
 Instagram direct publishing requires the rendered MP4 to be reachable from Meta over public HTTPS. The configured public origin exposes that export while Meta fetches it; avoid using it for media that should remain private.
-
-\n

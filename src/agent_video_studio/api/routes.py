@@ -231,5 +231,3 @@ def download_export(
     if not path.is_file():
         raise HTTPException(404, "Export file not found.")
     return FileResponse(path, filename=filename)
-
-\n

@@ -90,5 +90,3 @@ class YouTubePublisher:
             }
         except Exception as exc:
             raise ProviderError("YouTube upload failed. Review OAuth permissions, quota, and video metadata.") from exc
-
-\n

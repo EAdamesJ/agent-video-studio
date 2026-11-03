@@ -21,4 +21,3 @@ Describe the expected experience and acceptance criteria.
 ## Provider or platform requirements
 
 List any service, API access, cost, or approval requirements.
-\n

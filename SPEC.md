@@ -118,4 +118,3 @@ The repository's planned test layout is `tests/`: unit tests for project/timelin
 
 - The repository owner has not supplied product branding, so `agent-video-studio` is the working product/repository name.
 - OAuth client registrations and review approvals for social networks must be supplied by operators; code cannot grant platform permissions.
-\n

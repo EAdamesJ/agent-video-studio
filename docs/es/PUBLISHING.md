@@ -24,4 +24,3 @@ El flujo crea un contenedor Reels, espera su procesamiento y publica el contened
 ## Revisión y reintentos
 
 Preflight muestra credenciales, permisos y requisitos faltantes. Revisa cuenta, plataforma, video, texto y visibilidad antes de marcar la casilla de confirmación. Tras una interrupción de red, comprueba la plataforma antes de reintentar para evitar duplicados.
-\n

@@ -8,4 +8,3 @@
 - Keep web, CLI, REST, and MCP behavior on shared application services.
 - External publishing must show a platform preflight and require an explicit confirmation.
 - Do not tag `0.1.0` until the full release checklist in `tasks/todo.md` is complete.
-\n

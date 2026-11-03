@@ -689,4 +689,3 @@ document.addEventListener("keydown", (event) => {
 applyLanguage();
 loadProjects();
 api("/api/providers").then((data) => renderProvider(data.text)).catch(() => {});
-\n

@@ -36,4 +36,3 @@ Plan API schema and MCP tool contract checks, CLI command checks, and a browser 
 - Web, CLI, REST, and MCP can list/create/edit projects, generate scripts, import media, select highlights, render, and export.
 - MCP works over stdio and Streamable HTTP.
 - Claude Code/Claude Desktop and Codex setup examples are provided; DeepSeek is configured as a model provider rather than incorrectly assumed to be an MCP host.
-\n

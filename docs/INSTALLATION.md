@@ -73,5 +73,3 @@ The web/API server binds to `127.0.0.1` by default. The local API does not inclu
 - Local transcription asks for an optional package: install `.[transcription]` or set `AVS_TRANSCRIPTION_PROVIDER=openai` and configure `OPENAI_API_KEY`.
 - The app cannot see a newly edited `.env`: restart `avs serve`; `.env` is loaded when the process starts.
 - MCP startup fails: install `.[mcp]` into the same Python environment used by the configured command.
-
-\n

@@ -30,5 +30,3 @@ TEXT_PRESETS = {
     ),
     "custom": ProviderPreset("custom", "OpenAI-compatible custom endpoint", "", "AVS_TEXT_API_KEY", ""),
 }
-
-\n

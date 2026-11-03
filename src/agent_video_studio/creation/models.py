@@ -28,5 +28,3 @@ class SceneEdit(BaseModel):
     asset_search_query: str | None = Field(default=None, max_length=300)
     duration_seconds: float | None = Field(default=None, ge=1, le=60)
     caption_text: str | None = Field(default=None, max_length=2000)
-
-\n

@@ -124,5 +124,3 @@ def build_stock_providers(settings: Settings) -> dict[str, Any]:
     if settings.pixabay_api_key:
         providers["pixabay"] = PixabayStockProvider(settings.pixabay_api_key)
     return providers
-
-\n

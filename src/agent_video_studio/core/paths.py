@@ -25,5 +25,3 @@ class PathPolicy:
 def safe_filename(value: str, fallback: str = "media") -> str:
     cleaned = re.sub(r"[^A-Za-z0-9._-]+", "_", Path(value).name).strip("._")
     return cleaned[:120] or fallback
-
-\n

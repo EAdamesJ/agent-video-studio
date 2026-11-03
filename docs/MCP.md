@@ -65,5 +65,3 @@ For a local HTTP endpoint, start `avs mcp --transport streamable-http --host 127
 The media import tool only reads files inside the configured app data directory. Use the web upload or CLI import command to copy a source into that directory first.
 
 DeepSeek is a configurable model provider. An MCP client/host still needs to be supplied by a compatible application; this project does not claim that every DeepSeek product hosts MCP servers.
-
-\n

@@ -86,5 +86,3 @@ class CreationService:
                 self.projects.update(project_id, document_patch={"timeline": timeline})
                 return scene
         raise KeyError(f"Scene '{scene_id}' was not found in project '{project_id}'.")
-
-\n

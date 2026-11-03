@@ -14,4 +14,3 @@ All notable user-facing changes will be documented here. The release number foll
 - Preflight and explicit confirmation for social publishing; English and Spanish guides.
 
 This work is unreleased. The complete 0.1.0 release checklist remains in `tasks/todo.md`.
-\n

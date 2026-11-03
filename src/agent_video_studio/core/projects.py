@@ -102,5 +102,3 @@ class ProjectStore:
             updated_at=row["updated_at"],
             document=decode_json(row["document_json"], {}) or {},  # type: ignore[arg-type]
         )
-
-\n

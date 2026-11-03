@@ -83,5 +83,3 @@ class AssetStore:
             metadata=decode_json(row["metadata_json"], {}) or {},  # type: ignore[arg-type]
             created_at=row["created_at"],
         )
-
-\n

@@ -129,5 +129,3 @@ class StudioApplication:
             "jobs": jobs,
             "providers": self.providers.list_status(),
         }
-
-\n

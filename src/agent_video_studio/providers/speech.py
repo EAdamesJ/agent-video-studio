@@ -93,5 +93,3 @@ def _edge_voice(language: str) -> str:
         "zh": "zh-CN-XiaoxiaoNeural",
     }
     return voices.get(prefix, voices.get(prefix.split("-")[0], "en-US-AvaNeural"))
-
-\n

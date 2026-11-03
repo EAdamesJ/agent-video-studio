@@ -32,4 +32,3 @@ Define `PEXELS_API_KEY` o `PIXABAY_API_KEY` para habilitar búsqueda de videos d
 - El proveedor de texto recibe el brief y el contexto usado para generar el resultado.
 - La transcripción, la voz y la búsqueda de stock solo contactan los servicios seleccionados para esa operación.
 - No hay cambio silencioso de proveedor. Tarifas, retención y disponibilidad dependen del servicio configurado.
-\n

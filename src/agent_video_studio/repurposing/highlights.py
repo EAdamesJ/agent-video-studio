@@ -43,5 +43,3 @@ class HighlightSelector:
         if not valid:
             raise ProviderError("The model did not return valid clip candidates. Try another provider or prompt.")
         return valid
-
-\n

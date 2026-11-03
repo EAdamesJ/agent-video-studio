@@ -57,5 +57,3 @@ class AnthropicProvider:
         if not result.strip():
             raise ProviderError("Anthropic returned an empty response.")
         return result.strip()
-
-\n

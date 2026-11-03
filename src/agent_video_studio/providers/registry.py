@@ -73,5 +73,3 @@ class ProviderRegistry:
             "custom": os.getenv("AVS_TEXT_API_KEY", ""),
         }
         return keys.get(provider_id, os.getenv(env_key, ""))
-
-\n

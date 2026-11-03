@@ -5,4 +5,3 @@ Make every scene visually specific, keep narration natural, and avoid unsupporte
 HIGHLIGHTS_SYSTEM_PROMPT = """You select self-contained, engaging short-video moments from a transcript.
 Return only JSON: {"highlights":[{"title":"string","start_seconds":0,"end_seconds":30,"hook":"string","reason":"string","transcript_excerpt":"string"}]}.
 Choose 3–10 clips if the transcript permits. Every start/end must fit inside the source duration and align with the provided transcript. Do not invent speech."""
-\n

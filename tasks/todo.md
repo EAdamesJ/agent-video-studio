@@ -133,4 +133,3 @@ Tasks are ordered by the approved module dependency graph. Each code task is sco
 
 - [ ] All module specs' success criteria are satisfied.
 - [ ] No release tag is created until the feature-complete checklist is met.
-\n

@@ -36,4 +36,3 @@ Plan fixture-based checks for timestamps, clip bounds, transcript segments, supp
 - Local video and audio import produces duration/metadata and a normalized transcript.
 - Candidate clips include start/end timestamps, title, hook, transcript excerpt, and ranking rationale.
 - Approved candidates become editable timeline projects and render at selected aspect ratios.
-\n

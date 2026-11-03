@@ -71,4 +71,3 @@ MIT. See [`LICENSE`](LICENSE).
 ## Español: contribuciones
 
 Se aceptan reportes de errores, ideas y contribuciones. Antes de abrir un PR, revisa [`CONTRIBUTING.md`](CONTRIBUTING.md) y el contrato de cada módulo en [`specs/`](specs/).
-\n

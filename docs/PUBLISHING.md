@@ -34,5 +34,3 @@ The connector creates a Reels media container from the public video URL, polls i
 Preflight reports missing credentials and platform requirements without uploading. A separate publish action is required. A network interruption can leave an upload processing at the platform; check the platform before retrying to avoid duplicate posts.
 
 Scheduling, account management, and credential acquisition through a hosted service are not part of the local 0.1 workflow. Tokens remain under operator control.
-
-\n

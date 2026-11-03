@@ -7,4 +7,3 @@
 - Preserve source timestamps and editable timeline data through rendering/export.
 - Use FFmpeg argument arrays and keep managed files under the configured data directory.
 - Publishing must retain the explicit confirmation gate and preflight checks.
-\n

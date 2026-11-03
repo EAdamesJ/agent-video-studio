@@ -103,5 +103,3 @@ Image and video generation providers implement the `GeneratedMediaProvider` inte
 - Remote transcription/speech/stock services receive the media or text needed for that operation.
 - Provider errors are redacted and no automatic fallback sends the same content to another service.
 - Prices, retention, and model availability depend on the provider; review their current terms before enabling them.
-
-\n

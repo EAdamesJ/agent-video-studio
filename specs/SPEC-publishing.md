@@ -34,4 +34,3 @@ Plan mocked OAuth/upload tests and metadata validation. Live publication is manu
 - Export produces a platform-ready folder even when OAuth is not configured.
 - YouTube, Instagram, and TikTok adapters report setup/audit requirements and support the platform's permitted upload flow when configured.
 - Post metadata and user-selected visibility are validated before upload; failures do not lose the rendered project.
-\n

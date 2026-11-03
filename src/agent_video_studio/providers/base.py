@@ -29,5 +29,3 @@ def parse_json_object(text: str) -> dict[str, Any]:
     if not isinstance(value, dict):
         raise ProviderError("The model response must be a JSON object.")
     return value
-
-\n

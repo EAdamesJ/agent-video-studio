@@ -17,4 +17,3 @@ Las herramientas MCP se limitan a operaciones del proyecto. `import_media` acept
 ## Acceso por red
 
 Mantén `AVS_HOST=127.0.0.1` para uso local. Para acceder remotamente, coloca la aplicación detrás de TLS, autenticación y controles de red. No expongas la API local sin protección. Instagram requiere que el MP4 de exportación esté disponible públicamente por HTTPS, lo que revela ese archivo a cualquier cliente con acceso a la URL durante la publicación.
-\n

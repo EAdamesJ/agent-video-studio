@@ -114,5 +114,3 @@ class RepurposingService:
             )
             cursor += duration
         return {"version": 1, "scenes": scenes}
-
-\n

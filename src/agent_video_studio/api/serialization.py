@@ -65,5 +65,3 @@ def public_job(job: Job) -> dict[str, Any]:
         "created_at": job.created_at,
         "updated_at": job.updated_at,
     }
-
-\n

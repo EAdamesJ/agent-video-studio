@@ -28,5 +28,3 @@ def configure_logging(level: str = "INFO") -> None:
     )
     for handler in logging.getLogger().handlers:
         handler.addFilter(SecretRedactionFilter())
-
-\n

@@ -86,5 +86,3 @@ def decode_json(value: str | None, default: object = None) -> object:
     if value is None:
         return default
     return json.loads(value)
-
-\n

@@ -240,5 +240,3 @@ def list_jobs(project_id: str) -> None:
     """List recent background jobs for a project."""
     jobs = _application().jobs.list_for_project(project_id)
     typer.echo(json.dumps([job.to_dict() for job in jobs], ensure_ascii=False, indent=2))
-
-\n

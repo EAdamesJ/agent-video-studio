@@ -110,5 +110,3 @@ class JobRunner:
             finally:
                 self._cancelled.discard(job_id)
                 self.queue.task_done()
-
-\n

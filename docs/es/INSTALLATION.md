@@ -63,4 +63,3 @@ Los datos se guardan por defecto en `~/.agent-video-studio/` (en Windows, `%USER
 - Si no hay proveedor de texto, configura `AVS_TEXT_PROVIDER`, su clave y `AVS_TEXT_MODEL`.
 - Para transcripción local, instala `.[transcription]`; la primera ejecución descarga el modelo.
 - Si MCP no inicia, instala `.[mcp]` en el mismo entorno Python usado por el agente.
-\n

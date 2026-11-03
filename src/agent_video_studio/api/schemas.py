@@ -80,5 +80,3 @@ class PublishExportRequest(BaseModel):
             share_to_feed=self.share_to_feed,
             ai_generated=self.ai_generated,
         )
-
-\n

@@ -14,5 +14,3 @@ class PublishRequest(BaseModel):
     confirm: bool = False
     share_to_feed: bool = True
     ai_generated: bool = True
-
-\n

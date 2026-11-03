@@ -194,5 +194,3 @@ def _public_project(project: Any) -> dict[str, Any]:
     ]
     return {"id": project.id, "title": project.title, "mode": project.mode, "status": project.status,
             "document": document}
-
-\n

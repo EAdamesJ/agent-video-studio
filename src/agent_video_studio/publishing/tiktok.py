@@ -122,5 +122,3 @@ class TikTokPublisher:
             raise ProviderError(f"TikTok creator preflight returned HTTP {exc.response.status_code}.") from exc
         except httpx.HTTPError as exc:
             raise ProviderError("Could not query TikTok creator permissions.") from exc
-
-\n

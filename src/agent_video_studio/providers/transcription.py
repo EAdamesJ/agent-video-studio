@@ -92,5 +92,3 @@ def build_transcriber(settings: Settings, model: str = "small") -> Any:
     if provider == "openai":
         return OpenAITranscriber(settings.openai_api_key)
     raise ProviderError("Unknown transcription provider. Choose 'local' or 'openai'.")
-
-\n

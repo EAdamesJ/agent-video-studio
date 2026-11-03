@@ -24,5 +24,3 @@ class Highlight(BaseModel):
     hook: str = Field(default="", max_length=500)
     reason: str = Field(default="", max_length=1000)
     transcript_excerpt: str = Field(default="", max_length=4000)
-
-\n

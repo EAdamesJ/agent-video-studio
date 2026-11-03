@@ -90,5 +90,3 @@ class PublishingService:
             return self.publishers[platform]
         except KeyError as exc:
             raise ValueError(f"Unsupported publishing platform '{platform}'.") from exc
-
-\n

@@ -29,5 +29,3 @@ class GeneratedMediaRegistry:
 
     def list(self) -> list[str]:
         return sorted(self._providers)
-
-\n

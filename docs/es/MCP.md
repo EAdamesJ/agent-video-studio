@@ -43,4 +43,3 @@ args = ["mcp"]
 ```
 
 El servidor ofrece herramientas de proyectos, guiones, importación, análisis, selección de clips, edición, render, estado de proveedores y preflight de publicación. `publish_export` solo debe llamarse con `confirm=true` después de revisar el post. El cliente MCP compatible se debe configurar por separado; este proyecto no afirma que DeepSeek aloje servidores MCP.
-\n

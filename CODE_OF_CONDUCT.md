@@ -19,4 +19,3 @@ Report concerns privately to the maintainers using GitHub's private reporting op
 ## Scope
 
 This code of conduct applies in project spaces and when someone represents the project in public spaces.
-\n
