@@ -6,7 +6,7 @@
 
 Create short videos from an idea, or turn long-form media into timestamped clips. Operate the same projects from a web workspace, CLI, API, or MCP client.
 
-[English](#english) · [Español](#español) · [Roadmap](tasks/plan.md) · [Contributing](CONTRIBUTING.md)
+[English](#english) · [Español](#español) · [Agent Skill](skills/agent-video-studio/SKILL.md) · [Roadmap](tasks/plan.md) · [Contributing](CONTRIBUTING.md)
 
 [Guías: instalación](docs/es/INSTALLATION.md) · [proveedores](docs/es/PROVIDERS.md) · [MCP](docs/es/MCP.md) · [publicación](docs/es/PUBLISHING.md) · [privacidad](docs/es/PRIVACY.md)
 
@@ -31,6 +31,16 @@ Agent Video Studio is an open-source, self-hosted workspace for end-to-end AI-as
 - Keep a local project history and export MP4, SRT/VTT, thumbnails, metadata, and editable project data.
 - Add authorized publishing integrations for YouTube, Instagram, and TikTok. Every external post requires a separate confirmation.
 
+### Install the Agent Skill
+
+Install the reusable workflow instructions into a supported agent with the [Skills CLI](https://www.skills.sh/docs/cli):
+
+```bash
+npx skills add EAdamesJ/agent-video-studio --skill agent-video-studio
+```
+
+Choose Codex, Claude Code, or another agent offered by the installer. The skill teaches the agent to use AVS; the AVS application and its MCP server or CLI must be installed and configured separately. See [MCP setup](docs/MCP.md).
+
 ### 0.1.0 scope
 
 The first public release is intended to include the full creation and repurposing workflows, provider adapters, durable jobs, responsive web workspace, CLI, REST API, MCP tools, export bundles, and supported publishing adapters. See the [approved capability map](CAPABILITY_MAP.md) and [module specifications](specs/).
@@ -49,6 +59,16 @@ Agent Video Studio es un espacio de trabajo de código abierto y autoalojado par
 2. **Video largo a clips:** video/audio suministrado → transcripción → momentos sugeridos con marcas de tiempo → clips verticales revisables → paquete de exportación.
 
 Claude y Codex podrán controlar proyectos mediante MCP. DeepSeek, Claude, OpenAI y endpoints compatibles se conectarán como proveedores de modelos. Antes de exportar, el usuario podrá revisar y modificar cortes, escenas, texto, voz, subtítulos y metadatos.
+
+### Instalar la Agent Skill
+
+Instala las instrucciones reutilizables en un agente compatible con el [CLI de Skills](https://www.skills.sh/docs/cli):
+
+```bash
+npx skills add EAdamesJ/agent-video-studio --skill agent-video-studio
+```
+
+El instalador permite elegir Codex, Claude Code u otro agente disponible. La skill enseña al agente a usar AVS; la aplicación y su servidor MCP o CLI se instalan y configuran por separado. Consulta la [configuración MCP](docs/es/MCP.md).
 
 La versión 0.1.0 cubrirá el flujo completo acordado. El estado actual y los criterios de salida están en [`SPEC.md`](SPEC.md), [`CAPABILITY_MAP.md`](CAPABILITY_MAP.md) y [`tasks/todo.md`](tasks/todo.md).
 
